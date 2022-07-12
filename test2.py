@@ -32,10 +32,46 @@
 #             ho[i+1-j],ho[i-j]=ho[i-j],ho[i+1-j]
         
 
-ho=[4,2,3,1]
-for i in range(0,3):
-    for j in range(0,i+1):
-        if ho[i-j+1]<ho[i-j]:
-            ho[i+1-j],ho[i-j]=ho[i-j],ho[i+1-j]
-        else: break
-print(ho)
+# ho=[4,2,3,1]
+# for i in range(0,3):
+#     for j in range(0,i+1):
+#         if ho[i-j+1]<ho[i-j]:
+#             ho[i+1-j],ho[i-j]=ho[i-j],ho[i+1-j]
+#         else: break
+# print(ho)
+ho=[4,2,3,1,5]
+def mergesort(list):
+    def sort(unsorted_list):
+        if len(unsorted_list)==1:
+            return
+        mid=len(unsorted_list)//2
+        left=unsorted_list[:mid]
+        right=unsorted_list[mid:]
+        mergesort(left)
+        mergesort(right)
+        merge(left,right)
+    def merge(left,right):
+        i=0
+        j=0
+        k=0
+        while (i<len(left))and(j<len(right)):
+            if left[i]<right[j]:
+                list[k]=left[i]
+                i+=1
+                k+=1
+            else:
+                list[k]=right[j]
+                j+=1
+                k+=1
+        while i<len(left):
+            list[k]=left[i]
+            i+=1
+            k+=1
+        while j<len(right):
+            list[k]=right[j]
+            j+=1
+            k+=1
+    sort(list)
+    return list   
+ho=[9,4,2,6,0,7,8,1,11,99]
+print(mergesort(ho))
