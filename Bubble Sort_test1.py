@@ -24,14 +24,21 @@ for i in range(10): #리스트에 셀값 삽입
 for j in range(9):  #숫자가 제자리에 배치되는 조건문 9회반복
     for i in range(0,9-j): 
         if ho[i] > ho[i+1]:#비교하여 큰숫자를 오른쪽에 두는 알고리즘
-            y=ho[i] 
-            x=ho[i+1]
-        else:
-            x=ho[i] 
-            y=ho[i+1]
-        ho[i]=x 
-        ho[i+1]=y 
+            ho[i],ho[i+1]= ho[i+1],ho[i] #신기술접목
+          
 print(ho) #확인용 출력
+
+# for j in range(9):  #숫자가 제자리에 배치되는 조건문 9회반복
+#     for i in range(0,9-j): 
+#         if ho[i] > ho[i+1]:#비교하여 큰숫자를 오른쪽에 두는 알고리즘
+#             y=ho[i] 
+#             x=ho[i+1]
+#         else:
+#             x=ho[i] 
+#             y=ho[i+1]
+#         ho[i]=x 
+#         ho[i+1]=y 
+# print(ho) #확인용 출력
 
 for i in range(10):     #엑셀에 입력
     load_ws.cell(i+1,1,int(ho[i]))

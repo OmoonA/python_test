@@ -21,3 +21,4 @@ print(ho)
 
 i=0
 print("%d"%(i+1))
+print("I ate {number} apples. so I was sick for {day} days.".format(day=3,number=10))
