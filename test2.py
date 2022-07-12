@@ -25,4 +25,17 @@
 # print("I ate {number} apples. so I was sick for {day} days.".format(day=3,number=10))
 
 
-ho=[4,9,2,6,0,7,8,1,11,99]
+# ho=[9,4,2,6,0,7,8,1,11,99]
+# for i in range(1,10):
+#     for j in range(0,i):
+#         if ho[i-j+1]<ho[i-j]:
+#             ho[i+1-j],ho[i-j]=ho[i-j],ho[i+1-j]
+        
+
+ho=[4,2,3,1]
+for i in range(0,3):
+    for j in range(0,i+1):
+        if ho[i-j+1]<ho[i-j]:
+            ho[i+1-j],ho[i-j]=ho[i-j],ho[i+1-j]
+        else: break
+print(ho)
